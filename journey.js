@@ -4,10 +4,10 @@ const createRivers = () => {
     const rivers = Math.floor(Math.random() * 3) + 1
     return rivers
 }
-
-const createMountains = () => {
+// generating random numbers for createMountains functions and pushes it down to the function/for loop located below. 
+const createMountains = () => { 
     const mountains = Math.floor(Math.random() * 2) + 1
-    return mauntains
+    return mountains
 }
 
 const createForests = () => {
@@ -20,16 +20,17 @@ const createPlains = () => {
     return plains
 }
 
+//journey maker is not a function generating a random journey for the drovers to go on. 
 const journeyMaker = () => {
     const journey = []
-
+    
     const areas = {
-        rivers: createRiver(),
-        forests: createForest(),
-        mountains: createMountain(),
-        plains: createPlain()
+        rivers: createRivers(), //added an s to the end of each function
+        forests: createForests(),
+        mountains: createMountains(),
+        plains: createPlains()
     }
-
+        //    takes the random number above and iterates through said number generating multiple rivers or forests that the journey will go through 
     for (let riverNumber = 0; riverNumber < areas.rivers; riverNumber++) {
         journey.push("river")
     }
@@ -38,7 +39,7 @@ const journeyMaker = () => {
         journey.push("forest")
     }
 
-    for (let mountainNumber = 0; mountainNumber < areas.mountain; mountainNumber++) {
+    for (let mountainNumber = 0; mountainNumber < areas.mountains; mountainNumber++) {
         journey.push("mountain")
     }
 
@@ -48,8 +49,8 @@ const journeyMaker = () => {
 
     return randomize(journey)
 }
-
+ // Added journeyMaker to module.exports 
 module.exports = {
     createRivers, createForests,
-    createMountains, createPlains
+    createMountains, createPlains, journeyMaker
 }

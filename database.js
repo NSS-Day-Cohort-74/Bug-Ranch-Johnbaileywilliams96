@@ -270,6 +270,6 @@ const database = {
     }]
 }
 
-
+// console.log("database", database.cattleTypes.length)
 
 module.exports = { database }
